@@ -1,0 +1,245 @@
+body {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #fffdfb;
+    color: #495255;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*------------------------Header*/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 30px;
+    box-shadow: 0px 2px 0px #dfe6e9;
+}
+
+.page_header {
+    margin-left: 40px;
+}
+
+.logo {
+    width: 68px;
+    height: 62px;
+    margin-right: 120px;
+}
+
+.header_menu {
+    display: flex;
+    margin-right: 300px;
+    font-size: 16px;
+}
+
+.training_singUp {
+    margin-right: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.training_singUp:hover {
+    color: #fdcb6e;
+    transform: scale(1.1);
+}
+
+.training_plans {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.training_plans:hover {
+    color: #fdcb6e;
+    transform: scale(1.1);
+}
+
+.contact_us {
+    width: 100px;
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    background-color: #FFE4A9;
+    color: black;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.contact_us:hover {
+    font-size: 17px;
+    transform: scale(1.1);
+}
+.contact_us:active {
+    transform: scale(0.92);
+}
+
+
+/*------------------------------------Main*/
+
+main {
+}
+
+/*Tabs*/
+
+.tabs_container {
+    display: flex;
+    height: 685px;
+    box-shadow: 0px 2px 0px #dfe6e9;
+}
+.tabs {
+    width: 900px;
+}
+.tab_item {
+    position: relative;
+    opacity: 1;
+    transition: 0.7s;
+}
+.tab_item_active {
+    opacity: 1;
+}
+.tab_item_img {
+    height: 500px;
+    width: 700px;
+}
+.tab_text_container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 425px;
+    left: 515px;
+    width: 470px;
+    height: 220px;
+    background-color: #ffe4a9;
+}
+
+.tab_text {
+    padding: 10px;
+    margin: 5px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #303952;
+    border: 5px solid rgb(248, 238, 219);
+}
+
+
+.tab_list {
+    width: 450px;
+    height: 250px;
+    padding-left: 10px;
+    margin-left: 20px;
+    border-left: 3px solid black;
+}
+
+.tab_list h2 {
+    border-bottom: 1px solid black;
+    width: 280px;
+}
+
+.tab_header {
+    width: 130px;
+    padding: 3px;
+    transition: 0.6s;
+    font-size: 21px;
+}
+.tab_header:hover {
+    background-color: #f7d794;
+    width: 160px;
+    font-size: 25px;
+}
+
+
+/*Timer*/
+
+.taimer_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    width: 100%;
+    margin: 20px 0px;
+}
+
+.timer_about {
+    width: 48%;
+    height: 95%;
+    margin-right: 4px;
+    background-color: #a29bfe22;
+}
+
+.promotion_header {
+    margin: 5px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.promotion_text {
+    margin: 40px 5px 5px;
+    font-size: 20px;
+}
+
+.promotion_end {
+    margin: 40px 5px 5px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.timer_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    height: 95%;
+    margin-left: 4px;
+}
+
+.timer_header {
+    margin: 5px;
+    margin-bottom: 60px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    height: 200px;
+    margin-bottom: 120px;
+    
+}
+
+.timer_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 45%;
+    margin: 5px;
+    box-shadow: 2px 3px 2px 3px #636e7246;
+}
+
+.timer_card_num {
+    font-size: 75px;
+    margin-top: 80px;
+    font-weight: 600;
+}
+
+.timer_card_text {
+    margin-bottom: 100px;
+    font-size: 16px;
+}
+
+
+/*----------------footer*/
+
+footer {
+    height: 120px;
+}
