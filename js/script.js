@@ -40,11 +40,20 @@ window.addEventListener('DOMContentLoaded', () => {
     const promoDeadline = '2022-10-31';
 
     function getTimeRemaining (endTime) {
-        const timeMS = Date.parse(endTime) - Date.parse(new Date()),
-              days = Math.floor(timeMS / (1000 * 60 * 60 * 24)),
-              hours = Math.floor((timeMS / (1000 * 60 *60)) % 24),
-              minutes = Math.floor((timeMS / 1000 / 60) % 60),
-              seconds = Math.floor((timeMS / 1000) % 60);
+        let days, hours, minutes, seconds;
+        const timeMS = Date.parse(endTime) - Date.parse(new Date());
+
+        if (timeMS <= 0) {
+            days = 0;
+            hours = 0;
+            minutes = 0;
+            seconds = 0; 
+        } else {
+            days = Math.floor(timeMS / (1000 * 60 * 60 * 24));
+            hours = Math.floor((timeMS / (1000 * 60 *60)) % 24);
+            minutes = Math.floor((timeMS / 1000 / 60) % 60);
+            seconds = Math.floor((timeMS / 1000) % 60);
+        }
 
         return {
             'total': timeMS,
@@ -87,5 +96,16 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    setTimer('.timer', promoDeadline)
+    setTimer('.timer', promoDeadline);
+
+    //-----------------Modal window
+
+    const modalTrigger = document.querySelector('[data-modal]'),
+          modal = document.querySelector('.modal'),
+          modalCloseBtn = document.querySelector('[data-close]');
+
+    modalTrigger.addEventListener('click', () => {
+        modal.classList.add('modal_active');
+        modal.classList.remove('modal_hide');
+    })
 })

@@ -19,7 +19,7 @@
                 <h2 class="training_singUp">Sign up for a workout</h2>
                 <h2 class="training_plans">Training plans</h2>
             </div>
-            <button class="contact_us">Contact us</button>
+            <button data-modal class="contact_us">Contact us</button>
         </header>
 
         <main>
@@ -28,7 +28,7 @@
                     <div class="tab_item tab_item_active">
                         <img src="img/workout.jpg" alt="" class="tab_item_img">
                         <div class="tab_text_container">
-                            <div class="tab_text">Workout is street gymnastics, which can be classified as an amateur sport, physical culture (fitness) and is a sports subculture. It includes performing various exercises on outdoor sports grounds, namely on horizontal bars, bars, wall bars, handrails and other structures, or without using them at all (on the ground). The main focus is on working with your own weight and developing strength and endurance.</div>
+                            <div class="tab_text">Workout is street gymnastics, which can be classified as an amateur sport, physical culture (fitness) and is a sports subculture. It includes performing various exercises on outdoor sports grounds, namely on horizontal bars, bars, wall bars, handrails and other structures, or without using them at all (on the ground).</div>
                         </div>
                     </div>
                     <div class="tab_item">
@@ -47,13 +47,43 @@
 
                 <div class="tab_list">
                     <h2>Choose your training plan</h2>
-                    <h3 class="tab_header">Hard workout</h3>
+                    <h3 class="tab_header">Workout</h3>
                     <h3 class="tab_header">Yoga</h3>
                     <h3 class="tab_header">Boxing</h3>
                 </div>
             </div>
 
-            <div class="taimer_container">
+            <div class="offer_container">
+                <div class="offer_header">
+                    <div class="offer_information">
+                        <h2>What can we offer you?</h2>
+                        <p>Our main idea is a healthy lifestyle. We are not just an ordinary gym. We offer you a new way of thinking and living that will help strengthen your body and develop you spiritually.</p>
+                    </div>
+                    <button data-modal class="contact_us offer_btn">Contact us</button>
+                </div>
+
+                <div class="offer_slider">
+                    <div class="slider_text">
+                        <h3>Make sport your child's hobby</h3>
+                        <p>We have many sections that will help your child fall in love with sports and a healthy lifestyle from childhood.</p>
+                    </div>
+                    <img src="img/slider/kids.jpg" alt="" class="slider_item_img">
+
+                    <div class="slider_counter">
+                        <button class="slider_btn">
+                            <img src="icons/left_arrow.png" alt="">
+                        </button>
+                        <div class="current_slide">01</div>
+                        <div>/</div>
+                        <div class="slides_count">04</div>
+                        <button class="slider_btn">
+                            <img src="icons/right_arrow.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content_container">
                 <div class="timer_about">
                     <h3 class="promotion_header">Promotion for new customers!</h3>
                     <p class="promotion_text">We appreciate every client and offer you to become one of them on very favorable terms. Everyone who buys the first gym membership will receive a 20% discount for 3 months of training!</p>
@@ -81,11 +111,27 @@
                     </div>
                 </div>
             </div>
+
         </main>
 
         <footer>
 
         </footer>
+
+
+        <div class="modal">
+            <div class="modal_dialog">
+                <div class="modal_content">
+                    <form action="#">
+                        <button data-close class="modal_close">X</button>
+                        <div class="modal_title">We will contact you!</div>
+                        <input type="text" class="modal_input" placeholder="Put your name">
+                        <input type="text" class="modal_input" placeholder="Put your phone">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

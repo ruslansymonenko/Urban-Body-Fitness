@@ -2,15 +2,20 @@ body {
     height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    background-color: #fffdfb;
+    background-color: #fafbdd96;
     color: #495255;
     font-family: 'Quicksand', sans-serif;
     font-size: 12px;
+    
 }
 
 .container {
     width: 90%;
     margin: 0 auto;
+    padding: 15px;
+    box-shadow: 1px 1px 1px 1px #5775a539;
+    background-color: #fffdfb;
+    border-radius: 7px;
 }
 
 /*------------------------Header*/
@@ -19,8 +24,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
-    margin-bottom: 30px;
+    height: 90px;
+    padding: 0px 10px;
+    margin-bottom: 20px;
     box-shadow: 0px 2px 0px #dfe6e9;
 }
 
@@ -36,8 +42,9 @@ header {
 
 .header_menu {
     display: flex;
-    margin-right: 300px;
-    font-size: 16px;
+    margin-right: 250px;
+    font-size: 15px;
+    text-align: center;
 }
 
 .training_singUp {
@@ -61,17 +68,17 @@ header {
 }
 
 .contact_us {
-    width: 100px;
+    width: 200px;
     height: 50px;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     background-color: #FFE4A9;
     color: black;
     border-radius: 10px;
     transition: 0.5s;
 }
 .contact_us:hover {
-    font-size: 17px;
+    font-size: 19px;
     transform: scale(1.1);
 }
 .contact_us:active {
@@ -89,6 +96,7 @@ main {
 .tabs_container {
     display: flex;
     height: 685px;
+    margin-left: 24px;
     box-shadow: 0px 2px 0px #dfe6e9;
 }
 .tabs {
@@ -114,14 +122,14 @@ main {
     top: 425px;
     left: 515px;
     width: 470px;
-    height: 220px;
-    background-color: #ffe4a9;
+    height: 180px;
+    background-color: #f9eb8f8b;
 }
 
 .tab_text {
     padding: 10px;
     margin: 5px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     color: #303952;
     border: 5px solid rgb(248, 238, 219);
@@ -133,43 +141,136 @@ main {
     height: 250px;
     padding-left: 10px;
     margin-left: 20px;
-    border-left: 3px solid black;
+    border-left: 3px solid #dfe6e9;
 }
 
 .tab_list h2 {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #dfe6e9;
     width: 280px;
 }
 
 .tab_header {
     width: 130px;
     padding: 3px;
+    border-radius: 4px;
     transition: 0.6s;
     font-size: 21px;
 }
 .tab_header:hover {
-    background-color: #f7d794;
+    background-color: #f7e594;
     width: 160px;
     font-size: 25px;
+}
+
+/*Offer*/
+.offer_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 650px;
+    width: 100%;
+    margin: 20px 10px;
+    box-shadow: 0px 2px 0px #dfe6e9;
+}
+
+.offer_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-right: 24px;
+}
+.offer_information {
+    margin-left: 30px;
+    width: 48%;
+}
+
+.offer_btn {
+    background-color: #a1d7d770;
+}
+
+.offer_information h2 {
+    font-size: 26px;
+    font-weight: 600;
+}
+.offer_information p {
+    font-size: 20px;
+}
+
+.offer_slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.slider_text {
+    font-size: 25px;
+    margin: 10px;
+}
+.slider_text h3 {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.slider_item_img {
+    height: 350px;
+    width: 550px;
+    margin: 24px;
+}
+
+.slider_counter {
+    position: absolute;
+    display: flex;
+    font-size: 37px;
+    top: -30px;
+    right: 83px;
+}
+
+.slider_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.slider_btn:hover {
+    box-shadow: 1px 1px 1px 1px #dfe6e9
+}
+.slider_btn:active {
+    transform: scale(0.90);
+}
+
+.slider_btn img {
+    height: 16px;
+    width: 16px;
 }
 
 
 /*Timer*/
 
-.taimer_container {
+.content_container {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 450px;
     width: 100%;
     margin: 20px 0px;
+    box-shadow: 0px 2px 0px #dfe6e9;
 }
 
 .timer_about {
     width: 48%;
     height: 95%;
     margin-right: 4px;
-    background-color: #a29bfe22;
+    background-color: #a1d7d770;
 }
 
 .promotion_header {
@@ -236,6 +337,81 @@ main {
     margin-bottom: 100px;
     font-size: 16px;
 }
+
+
+/*Modal window*/
+
+.modal {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 500px;
+    background-color: #D6ECEB;
+    color: #495255;
+    box-shadow: 1px 1px 1px 1px #636e7246;
+    border-radius: 5px;
+}
+
+.modal_hide {
+    display: none;
+}
+.modal_active {
+    display: block;
+}
+
+.modal_dialog {
+}
+.modal_content {
+}
+
+.modal_content form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 290px;
+    width: 490px;
+}
+
+.modal_close {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background-color: transparent;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+.modal_close:hover {
+    box-shadow: 1px 1px 1px 1px #636e7246;
+    background-color: white;
+}
+
+.modal_title {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.modal_input {
+    margin: 10px;
+    outline: none;
+    border: none;
+    height: 35px;
+    width: 245px;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 25px;
+    box-shadow: 1px 1px 1px 1px #636e7246;
+    color: #495255;
+}
+
 
 
 /*----------------footer*/
