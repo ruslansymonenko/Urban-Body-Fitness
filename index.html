@@ -19,7 +19,9 @@
                 <h2 class="training_singUp">Sign up for a workout</h2>
                 <h2 class="training_plans">Training plans</h2>
             </div>
-            <button data-modal class="contact_us">Contact us</button>
+            <button data-modal class="contact_us">
+                <a href="#modalWindow">Contact us</a>
+            </button>
         </header>
 
         <main>
@@ -59,7 +61,9 @@
                         <h2>What can we offer you?</h2>
                         <p>Our main idea is a healthy lifestyle. We are not just an ordinary gym. We offer you a new way of thinking and living that will help strengthen your body and develop you spiritually.</p>
                     </div>
-                    <button data-modal class="contact_us offer_btn">Contact us</button>
+                    <button data-modal class="contact_us offer_btn">
+                        <a href="#modalWindow">Contact us</a>
+                    </button>
                 </div>
 
                 <div class="offer_slider">
@@ -119,16 +123,17 @@
         </footer>
 
 
-        <div class="modal">
-            <div class="modal_dialog">
-                <div class="modal_content">
-                    <form action="#">
-                        <button data-close class="modal_close">X</button>
-                        <div class="modal_title">We will contact you!</div>
-                        <input type="text" class="modal_input" placeholder="Put your name">
-                        <input type="text" class="modal_input" placeholder="Put your phone">
-                    </form>
-                </div>
+
+    </div>
+    <div class="modal modal_hide" id="modalWindow">
+        <div class="modal_dialog">
+            <div class="modal_content">
+                <form action="#">
+                    <button data-close class="modal_close">X</button>
+                    <div class="modal_title">We will contact you!</div>
+                    <input type="text" class="modal_input" placeholder="Put your name">
+                    <input type="text" class="modal_input" placeholder="Put your phone">
+                </form>
             </div>
         </div>
     </div>

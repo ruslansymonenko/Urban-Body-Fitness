@@ -100,12 +100,39 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //-----------------Modal window
 
-    const modalTrigger = document.querySelector('[data-modal]'),
+    const modalTrigger = document.querySelectorAll('[data-modal]'),
           modal = document.querySelector('.modal'),
           modalCloseBtn = document.querySelector('[data-close]');
 
-    modalTrigger.addEventListener('click', () => {
+    function showModal () {
         modal.classList.add('modal_active');
         modal.classList.remove('modal_hide');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal () {
+        modal.classList.remove('modal_active');
+        modal.classList.add('modal_hide');
+        document.body.style.overflow = '';
+    }
+
+    modalTrigger.forEach(btn => {
+        btn.addEventListener('click', () => {
+            showModal();
+        })
+    })
+
+    modalCloseBtn.addEventListener('click', closeModal)
+
+    modal.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            closeModal();
+        }
+    })
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code == 'Escape' && modal.classList.contains('modal_active')) {
+            closeModal();
+        }
     })
 })
