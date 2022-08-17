@@ -258,6 +258,60 @@ main {
     width: 16px;
 }
 
+/*Membership offer*/
+
+.membership_offer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 100%;
+}
+.membership_cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+    width: 99%;
+    margin-right: 20px;
+    padding: 10px;
+    background-color: #a1d7d770;
+}
+.membership_header {
+    font-size: 40px;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #dfe6e9;
+}
+.membership_card {
+    background-color: #fafafa;
+    width: 23%;
+    padding: 5px;
+    height: 80%;
+    margin: 5px 25px;
+    box-shadow: 1px 3px 1px 2px #6a6e6e4c;
+    border-radius: 4px;
+    transition: 0.7s;
+}
+.membership_card:hover {
+    transform: scale(1.05);
+}
+
+.membership_card img {
+    height: 40%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.membership_card_info {
+    font-size: 17px;
+}
+.membership_card_price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+    border-top: 2px solid #dfe6e9;
+    padding-top: 10px;
+    font-size: 17px;
+}
 
 /*Timer*/
 

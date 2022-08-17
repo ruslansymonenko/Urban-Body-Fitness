@@ -147,5 +147,69 @@ window.addEventListener('DOMContentLoaded', () => {
     const modalTimerID = setTimeout(showModal, 20000);
     
 
-    window.addEventListener('scroll', showModalByScroll)
+    window.addEventListener('scroll', showModalByScroll);
+
+    //Classes for cards
+
+    class MenuCard {
+        constructor (src, alt, title, descr, price, parentSelector) {
+            this.src = src;
+            this.alt = alt;
+            this.title = title;
+            this.descr = descr;
+            this.price = price;
+            this.parent = document.querySelector(parentSelector);
+            this.cource = 41;
+        }
+
+        changeToUAH () {
+            this.price = this.price * this.cource 
+        }
+
+        render () {
+            const card = document.createElement('div');
+            card.classList.add('membership_card');
+
+            card.innerHTML = `
+            <img src=${this.src} alt=${this.alt}>
+            <div class="membership_card_info">
+                <h4>${this.title}</h4>
+                <p>${this.descr}</p>
+            </div>
+            <div class="membership_card_price">
+                <span>Price</span>
+                <span>${this.price} UAH/Month</span>
+            </div>
+            `;
+
+            this.parent.append(card);
+        }
+    }
+
+    new MenuCard(
+        'img/cards/solo.jpg',
+        'Solo training',
+        'Standart mebmership',
+        'Standard subscription for 30 days of self-work in the gym.',
+        200,
+        '.membership_cards'
+    ).render();
+
+    new MenuCard(
+        'img/cards/trainer.jpg',
+        'Training with trainer',
+        'Month of coaching',
+        'Training with a professional trainer according to an individually designed program.',
+        1000,
+        '.membership_cards'
+    ).render();
+
+    new MenuCard(
+        'img/cards/pool.jpg',
+        'Pool',
+        'Swimming pool for a month',
+        'Classes in the pool on the territory of our sports complex.',
+        350,
+        '.membership_cards'
+    ).render();
 })
