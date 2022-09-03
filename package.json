@@ -1,0 +1,26 @@
+{
+  "name": "urban-sport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "serve": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruslansymonenko/Urban-Body-Fitness.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruslansymonenko/Urban-Body-Fitness/issues"
+  },
+  "homepage": "https://github.com/ruslansymonenko/Urban-Body-Fitness#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
