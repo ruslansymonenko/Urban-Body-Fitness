@@ -144,6 +144,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+    //Adding modal window by timer below (was commented out, because it prevents of process of developing)
     // const modalTimerID = setTimeout(showModal, 20000);
     
 

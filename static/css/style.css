@@ -160,6 +160,7 @@ main {
     border-radius: 4px;
     transition: 0.6s;
     font-size: 21px;
+    cursor: pointer;
 }
 .tab_header:hover {
     background-color: #f7e594;
@@ -516,6 +517,21 @@ main {
     font-size: 25px;
     box-shadow: 1px 1px 1px 1px #636e7246;
     color: #495255;
+}
+
+.btn_send_request {
+    height: 40px;
+    width: 200px;
+    border: none;
+    background-color: #f7e594;
+    border-radius: 10px;
+    font-size: 23px;
+    color: #495255;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_send_request:active {
+    transform: scale(0.92);
 }
 
 
