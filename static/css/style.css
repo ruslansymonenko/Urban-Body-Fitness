@@ -76,6 +76,7 @@ header {
     color: black;
     border-radius: 10px;
     transition: 0.5s;
+    margin: 3px;
 }
 .contact_us:hover {
     font-size: 19px;
@@ -339,6 +340,7 @@ main {
     width: 220px;
     box-shadow: 1px 1px 1px 1px #6a6e6e4c;
     padding: 10px;
+    margin: 3px;
     font-size: 25px;
     box-shadow: 1px 1px 1px 2px #636e7246;
     color: #495255;
