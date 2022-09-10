@@ -1,13 +1,14 @@
-import exress from "express"
+import express from "express"
 import path, { dirname } from "path"
 import usersRoutes from './routes/users.js'
 
-const app = exress();
+const app = express();
 const PORT = 3000;
 const __dirname = path.resolve();
 
-app.use(exress.static(path.resolve(__dirname, 'static')));
-
+app.use(express.static(path.resolve(__dirname, 'static')));
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 app.use(usersRoutes);
 
 app.get('/style', (req, res) => {
@@ -16,6 +17,10 @@ app.get('/style', (req, res) => {
 
 app.get('/script.js', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'static', 'js', 'script.js'));
+})
+
+app.get('/json', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'static', 'json', 'users.json'))
 })
 
 app.listen(PORT, () => {

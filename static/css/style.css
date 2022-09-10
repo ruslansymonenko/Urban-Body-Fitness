@@ -76,6 +76,7 @@ header {
     color: black;
     border-radius: 10px;
     transition: 0.5s;
+    margin: 3px;
 }
 .contact_us:hover {
     font-size: 19px;
@@ -160,6 +161,7 @@ main {
     border-radius: 4px;
     transition: 0.6s;
     font-size: 21px;
+    cursor: pointer;
 }
 .tab_header:hover {
     background-color: #f7e594;
@@ -338,6 +340,7 @@ main {
     width: 220px;
     box-shadow: 1px 1px 1px 1px #6a6e6e4c;
     padding: 10px;
+    margin: 3px;
     font-size: 25px;
     box-shadow: 1px 1px 1px 2px #636e7246;
     color: #495255;
@@ -518,6 +521,21 @@ main {
     color: #495255;
 }
 
+.btn_send_request {
+    height: 40px;
+    width: 200px;
+    border: none;
+    background-color: #f7e594;
+    border-radius: 10px;
+    font-size: 23px;
+    color: #495255;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_send_request:active {
+    transform: scale(0.92);
+}
+
 
 /*Sides links*/
 
@@ -554,5 +572,48 @@ main {
 /*----------------footer*/
 
 footer {
+    height: 160px;
+    background-color: #636e72c7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_links {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.footer_links h3 {
+    font-size: 25px;
+    color: #dfe6e9;
+}
+.footer_links a {
+    text-decoration: none;
+    color: #dfe6e9;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.footer_logo {
     height: 120px;
+    width: 120px;
+}
+.footer_contacts {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    
+}
+.footer_contacts h3 {
+    font-size: 25px;
+    color: #dfe6e9;
+    margin: 0px;
+}
+.footer_contacts p {
+    color: #dfe6e9;
+    font-size: 20px;
+    margin-bottom: 5px;
 }

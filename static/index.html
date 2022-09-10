@@ -134,18 +134,29 @@
         </main>
 
         <footer>
-
+            <div class="footer_links">
+                <h3>We are on social media</h3>
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+            </div>
+            <div class="footer_logo"><img src="img/logo.png" alt=""></div>
+            <div class="footer_contacts">
+                <h3>You can call us</h3>
+                <p>+38066123456</p>
+                <p>+38096654321</p>
+            </div>
         </footer>
     </div>
 
     <div class="modal modal_hide" id="modalWindow">
         <div class="modal_dialog">
             <div class="modal_content">
-                <form action="#">
+                <form action="http://localhost:3000/api/server" method="post">
                     <button data-close class="modal_close">X</button>
                     <div class="modal_title">We will contact you!</div>
-                    <input type="text" class="modal_input" placeholder="Put your name">
-                    <input type="text" class="modal_input" placeholder="Put your phone">
+                    <input type="text" name="name" class="modal_input" placeholder="Put your name">
+                    <input type="text" name="phone" class="modal_input" placeholder="Put your phone">
+                    <button class="btn_send_request">Send</button>
                 </form>
             </div>
         </div>

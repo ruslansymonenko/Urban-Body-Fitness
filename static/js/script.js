@@ -1,3 +1,5 @@
+// import { request } from "express";
+
 window.addEventListener('DOMContentLoaded', () => {
     //------------------Tabs
 
@@ -144,7 +146,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    // const modalTimerID = setTimeout(showModal, 20000);
+    //Adding modal window by timer below (was commented out, because it prevents of process of developing)
+    const modalTimerID = setTimeout(showModal, 2000000);
     
 
     window.addEventListener('scroll', showModalByScroll);
@@ -213,3 +216,54 @@ window.addEventListener('DOMContentLoaded', () => {
         '.membership_cards'
     ).render();
 })
+
+//Forms
+
+const forms = document.querySelectorAll('form');
+
+const message = {
+    loading: 'Loading...',
+    success: 'Thank you! We will contact you asap!',
+    failure: 'Something was going wrong'
+}
+
+forms.forEach(item => {
+    postData(item);
+})
+
+function postData (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const statusMessage = document.createElement('div');
+        statusMessage.textContent = message.loading;
+        form.append(statusMessage);
+
+        const req = new XMLHttpRequest();
+        req.open('POST', 'http://localhost:3000/api/server');
+        req.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+        const formData = new FormData(form);
+        const object = {};
+
+        formData.forEach(function(value, key){
+            object[key] = value;
+        })
+
+        const json = JSON.stringify(object);
+
+        req.send(json);
+        req.addEventListener('load', () => {
+            if (req.status === 201) {
+                console.log('request sended')
+                statusMessage.textContent = message.success;
+                form.reset();
+                setTimeout(() => {
+                    statusMessage.remove();
+                })
+            } else {
+                statusMessage.textContent = message.failure;
+            }
+        })
+    })
+}
