@@ -251,12 +251,10 @@ function postData (form) {
         })
 
         const json = JSON.stringify(object);
-        console.log(object);
 
         req.send(json);
         req.addEventListener('load', () => {
             if (req.status === 201) {
-                console.log(req.response);
                 console.log('request sended')
                 statusMessage.textContent = message.success;
                 form.reset();

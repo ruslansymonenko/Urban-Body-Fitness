@@ -2,12 +2,13 @@ import fs from 'fs'
 
 let usersList = [];
 
-function saveUserToFile (userInfo) {
-    
+function saveUserToFile (userInfo) { 
+    let someData = '';
     fs.readFile('static/json/users.json', 'utf-8', (err, data) => {
-        if (err) throw err;
-        console.log(typeof(JSON.parse(data)));
-    })
+        if (err) throw err
+        someData = JSON.parse(data);
+    });
+    
 }
 
 export const getUsers = (req, res) => {
@@ -19,7 +20,7 @@ export const addUser = (req, res) => {
         ...req.body
     }
     usersList.push(user);
-    saveUserToFile();
+    console.log(saveUserToFile(user));
     // fs.writeFile("static/json/users.json", JSON.stringify(usersList), (err) => {
     //     if(err) {
     //         return console.log(err);
