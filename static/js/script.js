@@ -1,5 +1,3 @@
-// import { request } from "express";
-
 window.addEventListener('DOMContentLoaded', () => {
     //------------------Tabs
 
@@ -36,6 +34,54 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
     })
+
+    //-----------------------Slider
+
+    const previousSlideBtn = document.querySelector('.previous_slide');
+    const nextSlideBtn = document.querySelector('.next_slide');
+    const slides = document.querySelectorAll('.slide');
+    const currentSlide = document.querySelector('.current_slide');
+
+    let sliderIndex = 0;
+
+    const activeSlide = n => {
+        for (slide of slides) {
+            slide.classList.remove('active_slide');
+        }
+        slides[n].classList.add('active_slide');
+    }
+
+    const nextSlide = () => {
+        if (sliderIndex == slides.length - 1) {
+            sliderIndex = 0;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        } else {
+            sliderIndex++;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        }
+    }
+
+    const prevSlide = () => {
+        if (sliderIndex == 0) {
+            sliderIndex = slides.length - 1;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        } else {
+            sliderIndex--;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        }
+    }
+
+    nextSlideBtn.addEventListener('click', () => {
+        nextSlide();
+    });
+    previousSlideBtn.addEventListener('click', () => {
+        prevSlide()
+    })
+
 
     //---------------------Timer
 
