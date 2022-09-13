@@ -494,6 +494,14 @@ main {
 .modal_content {
 }
 
+.modal_dialog_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
 .modal_content form {
     position: relative;
     display: flex;
