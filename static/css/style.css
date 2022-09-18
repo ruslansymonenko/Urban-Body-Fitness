@@ -211,7 +211,25 @@ main {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    height: 400px;
     margin-bottom: 20px;
+}
+
+.slide {
+    display: flex;
+    right: -100%;
+    width: 0px;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: 1s;
+    height: 400px;
+}
+
+.active_slide {
+    right: 0;
+    opacity: 1;
+    width: 100%;
+    /* visibility: visible; */
 }
 
 .slider_text {

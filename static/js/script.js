@@ -1,5 +1,3 @@
-// import { request } from "express";
-
 window.addEventListener('DOMContentLoaded', () => {
     //------------------Tabs
 
@@ -36,6 +34,54 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         }
     })
+
+    //-----------------------Slider
+
+    const previousSlideBtn = document.querySelector('.previous_slide');
+    const nextSlideBtn = document.querySelector('.next_slide');
+    const slides = document.querySelectorAll('.slide');
+    const currentSlide = document.querySelector('.current_slide');
+
+    let sliderIndex = 0;
+
+    const activeSlide = n => {
+        for (slide of slides) {
+            slide.classList.remove('active_slide');
+        }
+        slides[n].classList.add('active_slide');
+    }
+
+    const nextSlide = () => {
+        if (sliderIndex == slides.length - 1) {
+            sliderIndex = 0;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        } else {
+            sliderIndex++;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        }
+    }
+
+    const prevSlide = () => {
+        if (sliderIndex == 0) {
+            sliderIndex = slides.length - 1;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        } else {
+            sliderIndex--;
+            currentSlide.textContent = sliderIndex + 1;
+            activeSlide(sliderIndex);
+        }
+    }
+
+    nextSlideBtn.addEventListener('click', () => {
+        nextSlide();
+    });
+    previousSlideBtn.addEventListener('click', () => {
+        prevSlide()
+    })
+
 
     //---------------------Timer
 
@@ -215,7 +261,7 @@ window.addEventListener('DOMContentLoaded', () => {
         350,
         '.membership_cards'
     ).render();
-})
+
 
 //Forms
 
@@ -225,11 +271,11 @@ const message = {
     loading: 'Loading...',
     success: 'Thank you! We will contact you asap!',
     failure: 'Something was going wrong'
-}
+};
 
 forms.forEach(item => {
     postData(item);
-})
+});
 
 function postData (form) {
     form.addEventListener('submit', (e) => {
@@ -238,10 +284,6 @@ function postData (form) {
         const statusMessage = document.createElement('div');
         statusMessage.textContent = message.loading;
         form.append(statusMessage);
-
-        const req = new XMLHttpRequest();
-        req.open('POST', 'http://localhost:3000/api/server');
-        req.setRequestHeader('Content-type', 'application/json; charset=utf-8');
 
         const formData = new FormData(form);
         const object = {};
@@ -252,18 +294,24 @@ function postData (form) {
 
         const json = JSON.stringify(object);
 
-        req.send(json);
-        req.addEventListener('load', () => {
-            if (req.status === 201) {
-                console.log('request sended')
-                statusMessage.textContent = message.success;
-                form.reset();
-                setTimeout(() => {
-                    statusMessage.remove();
-                })
-            } else {
-                statusMessage.textContent = message.failure;
-            }
-        })
+        fetch('http://localhost:3000/api/server', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: json
+        }).then(data => {
+            console.log('request sent')
+            statusMessage.textContent = message.success;
+            setTimeout(() => {
+            statusMessage.remove()
+            }, 3000)
+        }).catch(() => {
+            statusMessage.textContent = message.failure;
+        }).finally(() => {
+            form.reset();
+        });
     })
-}
+    }
+
+})
