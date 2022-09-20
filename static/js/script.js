@@ -295,53 +295,53 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //--------------------------------Forms
 
-    const forms = document.querySelectorAll('form');
+const forms = document.querySelectorAll('form');
 
-    const message = {
-        loading: 'Loading...',
-        success: 'Thank you! We will contact you asap!',
-        failure: 'Something was going wrong'
-    }
+const message = {
+    loading: 'Loading...',
+    success: 'Thank you! We will contact you asap!',
+    failure: 'Something was going wrong'
+};
 
-    forms.forEach(item => {
-        postData(item);
-    })
+forms.forEach(item => {
+    postData(item);
+});
 
-    function postData (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+function postData (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
 
-            const statusMessage = document.createElement('div');
-            statusMessage.textContent = message.loading;
-            form.append(statusMessage);
+        const statusMessage = document.createElement('div');
+        statusMessage.textContent = message.loading;
+        form.append(statusMessage);
 
-            const req = new XMLHttpRequest();
-            req.open('POST', 'http://localhost:3000/api/server');
-            req.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        const formData = new FormData(form);
+        const object = {};
 
-            const formData = new FormData(form);
-            const object = {};
-
-            formData.forEach(function(value, key){
-                object[key] = value;
-            })
-
-            const json = JSON.stringify(object);
-
-            req.send(json);
-            req.addEventListener('load', () => {
-                if (req.status === 201) {
-                    console.log('request sended')
-                    showThanksModal(message.success);
-                    form.reset();
-                    statusMessage.remove();
-
-                } else {
-                    showThanksModal(message.failure);
-                }
-            })
+        formData.forEach(function(value, key){
+            object[key] = value;
         })
-    }
 
+        const json = JSON.stringify(object);
+
+        fetch('http://localhost:3000/api/server', {
+            method: "POST",
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: json
+        }).then(data => {
+            console.log('request sent')
+            statusMessage.textContent = message.success;
+            setTimeout(() => {
+            statusMessage.remove()
+            }, 3000)
+        }).catch(() => {
+            statusMessage.textContent = message.failure;
+        }).finally(() => {
+            form.reset();
+        });
+    })
+    }
 
 })

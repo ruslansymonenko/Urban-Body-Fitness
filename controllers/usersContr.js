@@ -21,10 +21,10 @@ export const addUser = (req, res) => {
     }
     usersList.push(user);
     console.log(saveUserToFile(user));
-    // fs.writeFile("static/json/users.json", JSON.stringify(usersList), (err) => {
-    //     if(err) {
-    //         return console.log(err);
-    //     }
-    // })
+    fs.writeFile("static/json/users.json", JSON.stringify(usersList), (err) => {
+        if(err) {
+            return console.log(err);
+        }
+    })
     res.status(201).json({usersList});
 }
