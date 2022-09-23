@@ -16,7 +16,7 @@ body {
     margin: 0 auto;
     padding: 15px;
     box-shadow: 1px 1px 1px 1px #5775a539;
-    background-color: #fffdfb;
+    background-color: #fffdfbd9;
     border-radius: 7px;
 }
 
@@ -124,6 +124,7 @@ main {
 .tab_item_img {
     height: 500px;
     width: 700px;
+    border-radius: 5px;
 }
 .tab_text_container {
     position: absolute;
@@ -297,7 +298,7 @@ main {
     width: 99%;
     margin-right: 20px;
     padding: 10px;
-    background-color: #dfe6e9;
+    background-color: #dfe6e9b3;
 }
 .membership_header {
     font-size: 40px;
@@ -340,7 +341,7 @@ main {
 
 .contact_form {
     flex-direction: column;
-    background-color: #dfe6e9;
+    background-color: #dfe6e9a7;
 }
 
 .contact_form h2 {
@@ -380,20 +381,13 @@ main {
     flex-direction: column;
     padding: 40px 0px;
     width: 100%;
+    background-color: #fffdfb;
 }
 
 .calculator_container h3, h2 {
     text-align: center;
     font-size: 18px;
 }
-
-.calculator_header {
-}
-
-.gender_row {
-}
-
-
 
 .calculator_btn {
     height: 50px;
@@ -474,7 +468,7 @@ main {
     width: 48%;
     height: 95%;
     margin-right: 4px;
-    background-color: #dfe6e9;
+    background-color: #dfe6e9c7;
 }
 
 .promotion_header {
@@ -688,7 +682,7 @@ main {
 
 footer {
     height: 160px;
-    background-color: #636e72c7;
+    background-color: #636e72a5;
     display: flex;
     align-items: center;
     justify-content: space-between;
