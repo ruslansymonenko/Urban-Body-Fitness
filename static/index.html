@@ -109,6 +109,37 @@
                     <div class="membership_cards"></div>
             </div>
 
+            <div class="content_container calculator_container">
+                <h2 class="calculator_header">Let's calculate your daily calorie requirement!</h2>
+                <div class="gender_row">
+                    <h3>Your gender</h3>
+                    <div class="male_btns">
+                        <button id="male" class="calculator_btn">Male</button>
+                        <button id="female" class="calculator_btn">Female</button>
+                    </div>
+                </div>
+                <div class="parameters_row">
+                    <h3>Your parameters</h3>
+                    <div class="calculator_inputs">
+                        <input type="text" placeholder="Enter height" id="height">
+                        <input type="text" placeholder="Enter weight" id="weight">
+                        <input type="text" placeholder="Enter age" id="age">
+                    </div>
+                </div>
+                <div class="activity_row">
+                    <h3>Your activities</h3>
+                    <div class="activity_btns">
+                        <button data-ratio="1.2" id="low" class="calculator_btn">Low activity</button>
+                        <button data-ratio="1.55" id="average" class="calculator_btn">Average activity</button>
+                        <button data-ratio="1.725" id="high" class="calculator_btn">High activity</button>
+                    </div>
+                </div>
+                <div class="calories_row">
+                    <h3>Your daily calorie requirement</h3>
+                    <div class="calories_result">0</div>
+                </div>
+            </div>
+
             <div class="content_container contact_form">
                 <h2>Sign up for your first free workout</h2>
                 <div class="contact_field">

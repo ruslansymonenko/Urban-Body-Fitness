@@ -284,34 +284,6 @@ window.addEventListener('DOMContentLoaded', () => {
             })
         })
 
-    // new MenuCard(
-    //     'img/cards/solo.jpg',
-    //     'Solo training',
-    //     'Standart mebmership',
-    //     'Standard subscription for 30 days of self-work in the gym.',
-    //     200,
-    //     '.membership_cards'
-    // ).render();
-
-    // new MenuCard(
-    //     'img/cards/trainer.jpg',
-    //     'Training with trainer',
-    //     'Month of coaching',
-    //     'Training with a professional trainer according to an individually designed program.',
-    //     1000,
-    //     '.membership_cards'
-    // ).render();
-
-    // new MenuCard(
-    //     'img/cards/pool.jpg',
-    //     'Pool',
-    //     'Swimming pool for a month',
-    //     'Classes in the pool on the territory of our sports complex.',
-    //     350,
-    //     '.membership_cards'
-    // ).render();
-
-
 //--------------------------------Forms
 
 const forms = document.querySelectorAll('form');
@@ -370,5 +342,71 @@ function bindPostData (form) {
     })
     };
 
+    //----------------------Calculator
+
+    const caloriesResultContainer = document.querySelector('.calories_result');
+    let userGender, userHeight, userWeight, userAge, ratio;
+
+    function calcTotal () {
+        if (!userGender || !userHeight || !userWeight || !userAge || !ratio) {
+            caloriesResultContainer.textContent = '____';
+            return;
+        }
+
+        if (userGender === 'female') {
+            caloriesResultContainer.textContent = Math.round((447.6 + (9.2 * userWeight) + (3.1 * userHeight) - (4.3 * userAge)) * ratio);
+        } else {
+            caloriesResultContainer.textContent = Math.round((88.36 + (13.4 * userWeight) + (4.8 * userHeight) - (5.7 * userAge)) * ratio);
+        }
+    };
+
+    function getStaticInfo (parentSelector, activeClass) {
+        const elements = document.querySelectorAll(`${parentSelector} button`);
+
+        elements.forEach(elem => {
+            elem.addEventListener('click', (e) => {
+                if (e.target.getAttribute('data-ratio')) {
+                    ratio = +e.target.getAttribute('data-ratio');
+                } else {
+                    userGender = e.target.getAttribute('id');
+                }
+    
+                elements.forEach(elem => {
+                    elem.classList.remove(activeClass);
+                });
+    
+                e.target.classList.add(activeClass);
+    
+                calcTotal();
+            });
+        })
+    };
+
+    function getDynamicInfo (selector) {
+        const input = document.querySelector(selector);
+
+        input.addEventListener('input', () => {
+            switch(input.getAttribute('id')) {
+                case 'height':
+                    userHeight = +input.value;
+                    break;
+                case 'weight':
+                    userWeight = +input.value;
+                    break;
+                    case 'age':
+                        userAge = +input.value;
+                        break;
+            }
+
+            calcTotal();
+        });
+    };
+
+    calcTotal();
+    getStaticInfo('.male_btns', 'calculator_btn_active');
+    getStaticInfo('.activity_btns', 'calculator_btn_active');
+    getDynamicInfo('#height');
+    getDynamicInfo('#weight');
+    getDynamicInfo('#age');
 
 })
