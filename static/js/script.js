@@ -230,6 +230,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //Classes for cards
 
+
+
     class MenuCard {
         constructor (src, alt, title, descr, price, parentSelector) {
             this.src = src;
@@ -265,32 +267,49 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    new MenuCard(
-        'img/cards/solo.jpg',
-        'Solo training',
-        'Standart mebmership',
-        'Standard subscription for 30 days of self-work in the gym.',
-        200,
-        '.membership_cards'
-    ).render();
+    const getCards = async (url) => {
+        const result = await fetch(url);
 
-    new MenuCard(
-        'img/cards/trainer.jpg',
-        'Training with trainer',
-        'Month of coaching',
-        'Training with a professional trainer according to an individually designed program.',
-        1000,
-        '.membership_cards'
-    ).render();
+        if (!result.ok) {
+            throw Error(`Could not fetch ${url}, status ${res.status}`);
+        }
+    
+        return await result.json();
+    };
 
-    new MenuCard(
-        'img/cards/pool.jpg',
-        'Pool',
-        'Swimming pool for a month',
-        'Classes in the pool on the territory of our sports complex.',
-        350,
-        '.membership_cards'
-    ).render();
+    getCards('http://localhost:3000/api/cards')
+        .then(data => {
+            data.forEach(({src, alt, title, descr, price}) => {
+                new MenuCard(src, alt, title, descr, price, '.membership_cards').render();
+            })
+        })
+
+    // new MenuCard(
+    //     'img/cards/solo.jpg',
+    //     'Solo training',
+    //     'Standart mebmership',
+    //     'Standard subscription for 30 days of self-work in the gym.',
+    //     200,
+    //     '.membership_cards'
+    // ).render();
+
+    // new MenuCard(
+    //     'img/cards/trainer.jpg',
+    //     'Training with trainer',
+    //     'Month of coaching',
+    //     'Training with a professional trainer according to an individually designed program.',
+    //     1000,
+    //     '.membership_cards'
+    // ).render();
+
+    // new MenuCard(
+    //     'img/cards/pool.jpg',
+    //     'Pool',
+    //     'Swimming pool for a month',
+    //     'Classes in the pool on the territory of our sports complex.',
+    //     350,
+    //     '.membership_cards'
+    // ).render();
 
 
 //--------------------------------Forms
@@ -304,10 +323,22 @@ const message = {
 };
 
 forms.forEach(item => {
-    postData(item);
+    bindPostData(item);
 });
 
-function postData (form) {
+const postData = async (url, data) => {
+    const result = await fetch(url, {
+        method: "POST",
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: data
+    });
+
+    return await result.json();
+};
+
+function bindPostData (form) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -324,13 +355,8 @@ function postData (form) {
 
         const json = JSON.stringify(object);
 
-        fetch('http://localhost:3000/api/server', {
-            method: "POST",
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: json
-        }).then(data => {
+        postData('http://localhost:3000/api/server', json)
+        .then(data => {
             console.log('request sent')
             statusMessage.textContent = message.success;
             setTimeout(() => {
@@ -342,6 +368,7 @@ function postData (form) {
             form.reset();
         });
     })
-    }
+    };
+
 
 })

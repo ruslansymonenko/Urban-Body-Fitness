@@ -12,7 +12,14 @@ function saveUserToFile (userInfo) {
 }
 
 export const getUsers = (req, res) => {
-    res.status(200).json(usersList);
+    fs.readFile("static/json/users.json", (err, data) => {
+        if (err) {
+            console.log(err)
+        } else {  
+            console.log(JSON.parse(data))  
+            res.status(200).send(data);
+        }
+    })
 }
 
 export const addUser = (req, res) => {
@@ -27,4 +34,15 @@ export const addUser = (req, res) => {
         }
     })
     res.status(201).json({usersList});
+}
+
+export const addCards = (req, res) => {
+    fs.readFile("static/json/cards.json", (err, data) => {
+        if (err) {
+            console.log(err)
+        } else {  
+            console.log(JSON.parse(data))  
+            res.status(200).send(data);
+        }
+    })
 }

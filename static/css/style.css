@@ -2,7 +2,9 @@ body {
     height: 100vh;
     width: 100%;
     overflow-x: hidden;
-    background-color: #fafbdd96;
+    /* background-color: #fafbdd96; */
+    background-image: url(../img/city.jpg);
+    background-size: cover;
     color: #495255;
     font-family: 'Quicksand', sans-serif;
     font-size: 12px;
@@ -74,6 +76,9 @@ header {
     font-size: 18px;
     background-color: #FFE4A9;
     color: black;
+    -webkit-box-shadow: 2px 3px 14px -7px rgba(48,48,48,1);
+    -moz-box-shadow: 2px 3px 14px -7px rgba(48,48,48,1);
+    box-shadow: 2px 3px 14px -7px rgba(48,48,48,1);
     border-radius: 10px;
     transition: 0.5s;
     margin: 3px;
@@ -194,7 +199,7 @@ main {
 }
 
 .offer_btn {
-    background-color: #a1d7d770;
+    background-color: #dfe6e9;
 }
 
 .offer_information h2 {
@@ -294,7 +299,7 @@ main {
     width: 99%;
     margin-right: 20px;
     padding: 10px;
-    background-color: #a1d7d770;
+    background-color: #dfe6e9;
 }
 .membership_header {
     font-size: 40px;
@@ -385,7 +390,7 @@ main {
     width: 48%;
     height: 95%;
     margin-right: 4px;
-    background-color: #a1d7d770;
+    background-color: #dfe6e9;
 }
 
 .promotion_header {
@@ -460,7 +465,7 @@ main {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: #3e588182;
+    background-color: #636e7288;
     top: 0;
     left: 0;
     display: flex;
@@ -486,7 +491,7 @@ main {
 .modal_dialog {
     height: 300px;
     width: 500px;
-    background-color: #D6ECEB;
+    background-color: #dfe6e9;
     color: #495255;
     box-shadow: 1px 1px 1px 1px #636e7246;
     border-radius: 5px;
