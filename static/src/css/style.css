@@ -3,7 +3,7 @@ body {
     width: 100%;
     overflow-x: hidden;
     /* background-color: #fafbdd96; */
-    background-image: url(../img/city.jpg);
+    background-image: url(../../src/img/city.jpg);
     background-size: cover;
     color: #495255;
     font-family: 'Quicksand', sans-serif;

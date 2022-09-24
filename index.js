@@ -12,11 +12,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(usersRoutes);
 
 app.get('/style', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'static', 'css', 'style.css'));
+    res.sendFile(path.resolve(__dirname, 'static', 'src', 'css', 'style.css'));
 })
 
 app.get('/script.js', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'static', 'js', 'script.js'));
+    res.sendFile(path.resolve(__dirname, 'static', 'dist', 'js', 'bundle.js'));
 })
 
 app.get('/json', (req, res) => {

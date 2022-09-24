@@ -1,20 +1,20 @@
 [
     {
-        "src": "img/cards/solo.jpg",
+        "src": "src/img/cards/solo.jpg",
         "alt": "Solo training",
         "title": "Standart mebmership",
         "descr": "Standard subscription for 30 days of self-work in the gym.",
         "price": "200"
     },
     {
-        "src": "img/cards/trainer.jpg",
+        "src": "src/img/cards/trainer.jpg",
         "alt": "Training with trainer",
         "title": "Month of coaching",
         "descr": "Training with a professional trainer according to an individually designed program.",
         "price": "1000"
     },
     {
-        "src": "img/cards/pool.jpg",
+        "src": "src/img/cards/pool.jpg",
         "alt": "Pool",
         "title": "Swimming pool for a month",
         "descr": "Classes in the pool on the territory of our sports complex.",
